@@ -16,5 +16,7 @@ COPY enablegcc11.sh /etc/profile.d/enablegcc11.sh
 RUN yum install -y epel-release
 RUN yum install -y cmake3
 
+RUN yum install -y ninja-build
+
 # System requirements
 RUN yum install -y wget

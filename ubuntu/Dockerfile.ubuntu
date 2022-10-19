@@ -27,5 +27,10 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6AF7F09730B3F0A4
 RUN apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main"
 RUN apt-get update && apt-get install -y cmake
 
+# Other build related
+RUN apt-get install -y ninja-build
+
 # Cleanup
-RUN rm -rf /var/lib/apt/lists/*
+RUN apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/*
+
